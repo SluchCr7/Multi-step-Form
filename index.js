@@ -347,13 +347,11 @@ optionEle.forEach((el) => {
             // pricetotal.innerHTML = priceoption.innerHTML + objOptions[e.currentTarget.children[0].children[1].children[0].innerHTML].priceyear
             console.log(e.currentTarget.children[1].innerHTML)
             console.log(pricetotalnum)
-            document.getElementById("calcTotal").addEventListener("click", () => {
-                if (arrprices.length >= 1) {
-                    pricetotalnum.innerHTML = +priceoption.innerHTML + +arrprices.reduce((a, b) => {
-                        return a + +b.innerHTML
-                    }, 0)
-                }
-            })
+            if (arrprices.length >= 1) {
+                pricetotalnum.innerHTML = +priceoption.innerHTML + +arrprices.reduce((a, b) => {
+                    return a + +b.innerHTML
+                }, 0)
+            }
         }
     })
 })
@@ -371,6 +369,3 @@ function changePlan() {
     })
     price_total.innerHTML = ""
 }
-
-
-
