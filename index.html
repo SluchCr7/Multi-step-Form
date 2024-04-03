@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Multi-step form</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="../images/house.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></head>
+<body>
+  <div class="ImageSlider imageDisp">
+    <img src="assets/images/bg-sidebar-mobile.svg" class="BgMobile" alt="">
+    <div class="Steps">
+      <div class="step">
+        <span class="num active" id="numone">1</span>
+      </div>
+      <div class="step">
+        <span class="num" id="numtwo">2</span>
+      </div>
+      <div class="step">
+        <span class="num" id="numthree">3</span>
+      </div>
+      <div class="step">
+        <span class="num" id="numfour">4</span>
+      </div>
+    </div>
+  </div>
+  <div class="Container">
+    <div class="ImageSlider divImages2">
+      <img src="assets/images/bg-sidebar-desktop.svg" class="BgComputer" alt="">
+      <ul class="Steps">
+        <li class="step active" id="stepone">
+          <span class="num" id="numone"><a href="#slideone">1</a></span>
+          <div class="Right_text">
+            <h5>step 1</h5>
+            <span>Your Info</span>
+          </div>
+        </li>
+        <li class="step" id="step2">
+          <span class="num" id="numtwo"><a href="#slidetwo">2</a></span>
+          <div class="Right_text">
+            <h5>step 2</h5>
+            <span>Select Plan</span>
+          </div>
+        </li>
+        <li class="step" id="step3"> 
+          <span class="num" ><a href="#slidethree">3</a></span>
+          <div class="Right_text">
+            <h5>step 3</h5>
+            <span>Add-Ons</span>
+          </div>
+        </li>
+        <li class="step" id="step4">
+          <span class="num" id="numfour"><a href="#slidefour">4</a></span>
+          <div class="Right_text">
+            <h5>step 4</h5>
+            <span>Summary</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- sliders start -->
+    <div class="txtSlider show" id="slideone">
+      <h1 class="heading">Personal Info</h1>
+      <p class="p_txtinfo">  Please provide your name, email address, and phone number.</p>
+      <div class="txt_info_inputs" id="form">
+        <div class="input_feild">
+          <div class="labels">
+            <div>
+              <label for="name">Name</label>
+            </div>
+            <span id="span_error_name"></span>
+          </div>
+          <input type="text" id="name" class="inputborder" required placeholder="Ahmed Abobakr">
+        </div>
+        <div class="input_feild">
+          <div class="labels">
+            <div>
+              <label for="email">Email</label>
+            </div>
+            <span id="span_error_email"></span>
+          </div>
+          <input type="email" class="inputborder" id="email" required placeholder="AhmedAbobakr10@gmail.com ">
+        </div>
+        <div class="input_feild">
+          <div class="labels">
+            <div>
+              <label for="phone">Phone</label>
+            </div>
+            <span id="span_error_phone"></span>
+          </div>          
+          <input type="text" class="inputborder" id="phone" required placeholder="+201550662103">
+        </div>
+      </div>
+      <div class="Btn_stepnext">
+        <button class="nextStep" id="step2Go">Next Step</button>
+      </div>
+    </div>
+
+    <div class="txtSlider noneDisplay heddin" id="slidetwo">
+      <h1 class="heading">Select your plan</h1>
+      <p class="p_txtinfo">  You have the option of monthly or yearly billing.</p>
+      <form class="plans">
+        <div class="plan activePlan">
+          <div class="plan_img">
+            <img src="assets/images/icon-arcade.svg" alt="">
+          </div>
+          <div class="End_text">
+            <span class="title">Arcade</span>
+            <span class="price" id="priceAcrade">$9/mo</span>
+            <span class="free noneDisplay" id="free">2 months free</span>
+          </div>
+        </div>
+        <div class="plan">
+          <div class="plan_img">
+            <img src="assets/images/icon-advanced.svg" alt="">
+          </div>
+          <div class="End_text">
+            <span class="title">Advanced</span>
+            <span class="price" id="priceAdvanced">$12/mo</span>
+            <span class="free noneDisplay" id="free">2 months free</span>
+          </div>
+        </div>
+        <div class="plan">
+          <div class="plan_img">
+            <img src="assets/images/icon-pro.svg" alt="">
+          </div>
+          <div class="End_text">
+            <span class="title">Pro</span>
+            <span class="price" id="pricePro">$15/mo</span>
+            <span class="free noneDisplay" id="free">2 months free</span>
+          </div>
+        </div>
+      </form>
+      <div class="btn_check">
+        <span>Monthly</span>
+        <div class="switch" id="switchPlan">
+          <div id="circle" class="left"></div>
+        </div>
+        <span>Yearly</span>
+      </div>
+      <div class="btns_stepnext">
+        <button class="backStep">Go Back</button>
+        <button class="nextStep" id="step3Go">Next Step</button>
+      </div>
+    </div>
+
+
+    <div class="txtSlider noneDisplay heddin" id="slidethree">
+      <h1 class="heading">Pick add-ons</h1>
+      <p class="p_txtinfo">Add-ons help enhance your gaming experience.</p>
+      <div class="options">
+        <div class="option">
+          <div class="l_option">
+            <input type="checkbox" class="c_box" id="CheckItem">
+            <div class="txt_left_box">
+              <h2>Online Service</h2>
+              <span>Access to multiplayer games</span>
+            </div>
+          </div>
+          <span class="priceoption" id="priceoptionone">1</span> 
+        </div>
+        <div class="option">
+          <div class="l_option">
+            <input type="checkbox" class="c_box" id="CheckItem">
+            <div class="txt_left_box">
+              <h2>Larger storage</h2>
+              <span>Extra 1TB of cloud save</span>
+            </div>
+          </div>
+          <span class="priceoption" id="priceoptiontwo">2</span>
+        </div>
+        <div class="option">
+          <div class="l_option">
+            <input type="checkbox" class="c_box" id="CheckItem">
+            <div class="txt_left_box">
+              <h2>Customizable Profile</h2>
+              <span>Custom theme on your profile</span>
+            </div>
+          </div>
+          <span class="priceoption" id="priceoptionthree">2</span>
+        </div>
+      </div>
+      <div class="btns_stepnext newButtons">
+        <button class="backStep">Go Back</button>
+        <button class="nextStep" id="step4Go">Next Step</button>
+      </div>
+    </div>
+
+
+    <div class="txtSlider noneDisplay heddin" id="slidefour">
+      <h1 class="heading">Finishing up</h1>
+      <p class="p_txtinfo">Double-check everything looks OK before confirming.</p>
+      <div class="summarycheck">
+        <div class="top_summarycheck">
+          <div class="left_top">
+            <span class="typecheck" id="typecheck">Acrada(Monthly)</span>
+            <span class="linkchange"><a href="#" onclick="changePlan()">change</a></span>
+          </div>
+          <span class="priceoption" >$<span id="priceoption"></span></span>
+        </div>
+        <hr>
+        <div class="optionsale" id="optionsale">
+        </div>
+      </div>
+      <button class="calcTotal" id="calcTotal">Total</button>
+      <div class="optionSale_detail_out">
+          <div class="">
+            <span class="txt_option" id="txtTotal"></span>
+          </div>
+          <div>
+            <span class="price_option_active">$<span id="price_total"></span></span>
+          </div>
+      </div>
+      <div class="btns_stepnext newButtons">
+        <button class="backStep" disabled id="backStepFinal">Go Back</button>
+        <button class="nextStep">Confirm</button>
+      </div>
+    </div>
+    <div class="ConfirmMessage noneDisplay heddin" id="confirmSlide">
+      <img src="assets/images/icon-thank-you.svg" alt="">
+      <div class="txt_thank_confirm">
+        <h1>Thank You !</h1>
+        <p>Thanks for confirming your subscription! We hope you have fun 
+        using our platform. If you ever need support, please feel free 
+        to email us at support@loremgaming.com.</p>
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Sluch</a>.
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
