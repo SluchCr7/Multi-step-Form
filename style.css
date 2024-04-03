@@ -28,7 +28,7 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: var(--Light-blue);
+    background-color: var(--Magnolia);
 }
 .Container{
     display: flex;
@@ -509,9 +509,6 @@ ul.Steps li.step > span.num{
         padding: 20px;
         height: 400px;
     }
-    .attribution{
-        display: none;
-    }
     .Btn_stepnext{
         display: flex;
         align-items: center;
@@ -542,12 +539,15 @@ ul.Steps li.step > span.num{
         text-align: center;
         border: 1px solid var(--Light-gray);
     }
+    .nextStep{
+        position: fixed;
+        right: 30px;
+    }
+}
+.attribution{
+    display: none;
 }
 
-.attribution a{
-    text-decoration: none;
-    color: var(--Strawberry-red);
-}
 .activePlan{
     border-color: var(--Purplish-blue);
 }
